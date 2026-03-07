@@ -1,0 +1,152 @@
+body {
+  display: flex;
+  
+  margin: 0;
+  background-color: rgb(124, 80, 18);
+  background-size: cover;        /* umple tot ecranul */
+  background-position: center;   /* centrat */
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+
+
+
+.galerie{
+  padding-top: 8%;
+  padding-bottom: 8%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.item{
+  position: relative;   /* referință pentru overlay */
+  max-width: 300px;
+}
+
+.item img {
+  width: 100%;         /* imaginea ocupă lățimea containerului */
+  height: 100%;        /* imaginea ocupă înălțimea containerului */
+  object-fit: cover;   /* păstrează proporțiile și centrează conținutul */
+  display: block;
+}
+
+.overlay{
+  position: absolute;
+  inset: 0;
+  border-radius:50px;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+}
+
+.item h1{
+  position: absolute;
+  top: 50%;
+  
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: bisque;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+}
+
+.item img,h1{
+  transition: transform 0.3s ease;
+  border-radius:50px;
+}
+
+.item:hover img {
+  transform: scale(1.05);
+}
+
+
+
+
+
+/* Navbar container */
+
+
+.navbar { 
+  display: flex;
+  flex-direction: row; /* Suprascrie coloana pentru a pune elementele pe rând */
+  justify-content: space-between; /* Logo stânga, Home centru, Galerie dreapta */
+  align-items: center; /* Centrează-le pe verticală */
+  padding: 0 5vw; /* Oferă spațiu lateral ca să nu stea lipite de margini */
+  box-sizing: border-box; /* Esențial pentru a nu depăși lățimea ecranului */
+  height: 5%;
+  background-color: rgb(94, 65, 38);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+} 
+
+.navbar div, .navbar a {
+  height: 90%; /* Ocupă 70% din înălțimea de 5% a navbar-ului */
+  display: flex;
+  align-items: center;
+}
+
+.navbar img {
+  height: 100%; /* Toate pozele vor avea aceeași înălțime acum */
+  width: auto; /* Menține proporțiile pozelor */
+}
+
+.navbar .logo img{
+  width: 75px;
+  height: auto;
+}
+
+.navbar .galery img{
+    transition: transform 0.3s ease;
+}
+
+.navbar .home:hover img{
+  transform: scale(1.05);
+}
+
+.navbar .galery:hover img{
+  transform: scale(1.05);
+}
+
+footer{
+  display: flex;
+  padding: 2%;
+  align-items: end;
+  background-color: rgb(182, 119, 29);
+  margin-top:auto;
+}
+
+.info div{
+  display: flex;
+  align-items:center;
+
+}
+
+.info .Instagram img{
+  width: 10pt;
+}
+
+.info div .Instagram a{
+  color: black; /* Face textul negru */
+  text-decoration: none; /* Elimină subliniera (underlining) */ 
+}
+
+
+
+#flash-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 9999;
+}
