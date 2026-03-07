@@ -1,0 +1,130 @@
+body {
+  display: flex;
+
+  margin: 0;
+  background-color: rgb(124, 80, 18);
+  background-size: cover;        /* umple tot ecranul */
+  background-position: center;   /* centrat */
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* Navbar container */
+
+
+.navbar { 
+  display: flex;
+  flex-direction: row; /* Suprascrie coloana pentru a pune elementele pe rând */
+  justify-content: space-between; /* Logo stânga, Home centru, Galerie dreapta */
+  align-items: center; /* Centrează-le pe verticală */
+  padding: 0 5vw; /* Oferă spațiu lateral ca să nu stea lipite de margini */
+  box-sizing: border-box; /* Esențial pentru a nu depăși lățimea ecranului */
+  height: 5%;
+  background-color: rgb(94, 65, 38);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+} 
+
+.navbar div, .navbar a {
+  height: 90%; /* Ocupă 70% din înălțimea de 5% a navbar-ului */
+  display: flex;
+  align-items: center;
+}
+
+.navbar img {
+  height: 100%; /* Toate pozele vor avea aceeași înălțime acum */
+  width: auto; /* Menține proporțiile pozelor */
+}
+
+.navbar .logo img{
+  width: 75px;
+  height: auto;
+}
+
+
+
+
+footer{
+  display: flex;
+  padding: 2%;
+  margin-top: auto;
+  align-items: end;
+  background-color: rgb(182, 119, 29);
+}
+
+.info div{
+  display: flex;
+  align-items:center;
+
+}
+
+.info .Instagram img{
+  width: 10pt;
+}
+
+.info div .Instagram a{
+  color: black; /* Face textul negru */
+  text-decoration: none; /* Elimină subliniera (underlining) */ 
+}
+
+
+
+.container{
+  width:80%;
+  margin:auto;
+  padding-top:5%;
+}
+
+.section{
+  
+  margin-bottom:40px;
+}
+
+.section h2{
+  
+  border-bottom:2px solid rgb(66, 45, 25);
+  padding-bottom:6px;
+  margin-bottom:15px;
+}
+
+.list{
+ 
+  border-left:4px solid rgb(66, 45, 25);
+  background-color: rgb(202, 136, 44);
+  line-height:1.7;
+}
+
+.settings-box{
+  background:rgb(202, 136, 44);
+  padding:15px;
+  border-left:4px solid rgb(66, 45, 25);
+  margin-bottom:15px;
+}
+
+.info-box{
+  border-left:4px solid rgb(66, 45, 25);
+  background:rgb(202, 136, 44);
+  padding:15px;
+}
+
+.gallery{
+column-count:3;
+column-gap:20px;
+margin-top:30px;
+}
+
+.photo-box{
+break-inside:avoid;
+margin-bottom:20px;
+}
+
+.photo-box img{
+width:100%;
+height:auto;
+display:block;
+border-radius:6px;
+}
